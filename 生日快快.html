@@ -6,13 +6,85 @@
         <meta charset = "utf-8">
         <meta name = "viewport" content = "width=device-width">
         <style type = "text/CSS">
-            @import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+            @import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);           
+            *{
+                font-family: cwtexkai, Perpetua, serif;
+                background-color: #7b8094;
+                background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+            }
+            h2{
+                color:rgb(49, 15, 143);
+                
+            }
             body{
-                font-family:  cwtexkai, Perpetua, serif;
+                color:black;
+                font-weight: bold;
+                text-align: center;
+            }
+            h4{
+                text-align: center;
+            }
+            #intro{
+               text-align: center;
+               display: block;
+            }
+            img{
+                width: 30%;
+                height: auto;
+                image-rendering: auto;               
+                border: black;
             }
         </style>
+        <script type = "text/javascript">
+            var p1
+            var i = 0
+            var j = 0
+            var content = ["還記得那是我們一起去到淡水<br>沒有目標的隨意亂走 結果被我們找到了一個人煙稀少的海邊<br>好喜歡那時候考完學測無憂無慮的我們<br>想起這個 我們已經好久沒去了! 該走起了吧 &gt;&lt;", "這一張則是到了畢業的那天，那時候剛在一起一個月<br>連拍照都還好害羞的感覺<br>畢業那天可能是我顏質的巔峰<br>所以我特別選了一張我看起來瘋瘋的照片(免得壓低你的風采<br>那一刻應該是我人生最難忘的一刻<br>不僅僅乘載著邁向人生的下一個階段 更特別的是與你攜手度過", "我記得這張是我們第一次出去過夜拍的<br>那時候跟著帆哥一起到台中玩<br>也是我第一次跟異性一起過夜喔喔喔(榮幸嗎", "這張你超級Q的啦 這張是你的顏質巔峰<br>這次跟台中旅不一樣的是 我們是去離島ㄟ 而且還是我從來沒去過的小琉球<br>我對於這整趟旅程非常滿意(除了交車的時刻QQ<br>期待下次能夠下去玩水水", "接下來這張就是我把第一次奉獻給岩燒的照片<br>我印象中 我沒進去過氣氛那麼好的餐廳<br>感謝小毅毅的深情推薦 岩燒成功納入我最喜愛的餐廳沒有之一 吧(?", "先解釋一下 為什麼這張會出現在這裡<br>其實我也不知道 但我在整理圖片的時候 看到這張整個快笑死 我就決定把這個黑歷史留存下來<br>順便紀念一下mini hotel & 我們第二次到訪台中", "繼高雄的岩燒後 這次轉戰台北的岩燒<br>那天是0809 --小毅毅--出生的日子", "這張是段考前 殺到義大找你的照片<br>不 是胡文毅坐摩天輪坐到腿軟的照片XD", "這張則是最近期的照片 紀念一下相隔一個月久別重逢的可憐情侶", "未來 我們可能會在德國 也有可能會在台灣 甚至也有可能不幸分開<br>不管怎麼樣的結果 我希望我們能緊緊握住對方的手<br>至少證明彼此有努力過<h2>再請你多多指教囉!</h2>"]
+            function start(){
+                var button = document.getElementById("p1");
+                p1 = document.getElementById("p1");
+                button.addEventListener("click", pick, false);
+                var button = document.getElementById("fun");
+                fun.addEventListener("click", pick2, false);
+            }
+            function pick(){
+                document.getElementById("happy").innerHTML = "";
+                i++;
+                if(i == 11)
+                    i = 1;
+                p1.setAttribute("src", i + ".jpg");
+                document.getElementById("content").innerHTML = "<h4>" + content[i - 1] + "</h4>";
+            }
+            function pick2(){
+                j++;
+                if(j == 5)
+                    j = 1;
+                fun.setAttribute("src", "0" + j + ".jpg");
+                document.getElementById("in") = "";
+            }
+            window.addEventListener("load", start, false);
+        </script>
     </head>
     <body>
-        
+        <p>
+            <h2 id = "happy">
+                Happy birthday<br>
+                Congrats for your twentieth birthday!
+            </h2>
+        </p>
+        <p> 
+            <div id = "intro">
+                <div id = "content">
+                    <h4>點一下圖片啦~哥</h4>         
+                </div>
+                <img src = "Yao.jpg" alt = "剛認識的時候啦" id = "p1"> 
+            </div>
+        </p>
+        <p>
+            <div>
+                <h4 id = "in">接下來是我喜歡的梗圖 手指頭點一下啦</h4>
+                <img src = "01.jpg" id = "fun">
+            </div>
+        </p>
     </body>
 </html>
